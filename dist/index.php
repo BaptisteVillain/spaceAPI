@@ -9,7 +9,15 @@
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    
+    <div class="map-container">
+
+    </div>
+    <div class="sidebar-container">
+      
+    </div>
+    <div class="timeline-container">
+      
+    </div>
     <script src="assets/js/app.min.js"></script>
   </body>
 </html>
