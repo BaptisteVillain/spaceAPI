@@ -45,19 +45,21 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Title</title>
-    <!-- Links -->
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
 
-    <div class="map-container">
-      <div class="curiosity-path">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1440" viewBox="0 0 1440 1440">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Title</title>
+  <!-- Links -->
+  <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div class="map-container">
+    <div class="curiosity-path">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1440" viewBox="0 0 1440 1440">
       </div>
       <div class="content">
         <?php
@@ -72,12 +74,63 @@
       </div>
     </div>
     <div class="sidebar-container">
-      
+      <div class="sidebar-day">DAY 145</div>
+<!--      <div class="sidebar-slider">-->
+        <h2 class="sidebar-title photos">Photos</h2>
+<!--        <div class="slide">-->
+<!--        <div class="image index-1"><img src="https://unsplash.it/200/200/?random=1" alt=""></div>-->
+<!--        <div class="image index-2"><img src="https://unsplash.it/200/200/?random=1" alt=""></div>-->
+<!--        <div class="image index-3"><img src="https://unsplash.it/200/200/?random=1" alt=""></div>-->
+<!--      </div>-->
+<!--      </div>-->
+     
+      <div class="carousel">
+  
+  <div class="slides-container">
+    <div class="slides-mover">
+      <div class="slide">
+        <img src="http://lorempixel.com/200/200/" alt="img">
+      </div>
+      <div class="slide">
+        <img src="http://lorempixel.com/200/200/" alt="img">
+      </div>
+      <div class="slide">
+        <img src="http://lorempixel.com/200/200/" alt="img">
+      </div>
+
+  </div>
+  <div class="siblings">
+    <a href="#" class="prev">&lt;</a>
+    <a href="#" class="next">&gt;</a>
+  </div>
+  
+  
+</div>
+     
+     
+
+     
+     
+      <div class="sidebar-info">
+        <h2 class="sidebar-title">Informations</h2>
+        <div class="info-general">
+        <div>Temperature on Mars: <strong>-10</strong></div>
+        <br>
+        <div>Sol : <strong>150</strong></div>
+        </div>
+      </div>
+      <div class="sidebar-news">
+        <h2 class="sidebar-title">News of that day</h2>
+        <div>lorem</div>
+        <div>lorem</div>
+        <div>lorem</div>
+      </div>
     </div>
     <div class="timeline-container">
       
     </div>
 
     <script src="assets/js/app.min.js"></script>
+    <script src="../dist/assets/js/slider.js"></script>
   </body>
 </html>
