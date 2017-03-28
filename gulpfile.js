@@ -17,11 +17,11 @@ let config = {
   'dist': 'dist/assets/'
 }
 
-/** FTP Configuration **/   
-var user = process.env.FTP_USER;  
-var password = process.env.FTP_PWD;  
-var host = 'baptistevillain.fr';  
-var port = 21;  
+/** FTP Configuration **/
+var user = process.env.FTP_USER;
+var password = process.env.FTP_PWD;
+var host = 'baptistevillain.fr';
+var port = 21;
 var localFilesGlob = ['./dist/**'];
 var remoteFolder = 'baptistevillain.fr/project/intensive'
 
@@ -84,7 +84,7 @@ gulp.task('watch', function() {
   gulp.watch(config.root + '*.html', ['html'])
 })
 
-function getFtpConnection() {  
+function getFtpConnection() {
   return ftp.create({
     host: host,
     port: port,
