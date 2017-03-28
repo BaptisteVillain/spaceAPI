@@ -19,13 +19,13 @@ $boundary = "-----=".md5(rand());
 //==========
  
 //=====Définition du mail.
-$subject      = 'Thank your for your subscription';
+$subject    = 'Thank your for your subscription';
 $name       = 'Curiosity';
 $from       = 'curiositylifeonmars@gmail.com';
 $content    = 'Thank your for your subscription ! You will receive news from Curiosity as soon as we get some !';
 
 //=====Création du header de l'e-mail.
-$header = "From: \"turpinAntoine\"<turpinpro.at@gmail.com>".$passage_ligne;
+$header = "From: \"CuriosityROVER\"<curiositylifeonmars@gmail.com>".$passage_ligne;
 $header.= "Reply-to: \"".$name."\" <".$from.">".$passage_ligne;
 $header.= "MIME-Version: 1.0".$passage_ligne;
 $header.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
