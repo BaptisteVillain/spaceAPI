@@ -1,0 +1,203 @@
+nav {
+    width: 100%;
+
+    ul.left img {
+        width: 3%;
+        margin: 30px;
+        height: auto;
+    }
+}
+
+div.main_landing {
+    width: 100vh;
+
+    img {
+        width: 65%;
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+    }
+
+    div.landing_title {
+        position: absolute;
+        left: 42%;
+        top: 20%;
+
+        span {
+            padding-left: 45px;
+            font-weight: lighter;
+            margin-bottom: 20px;
+            opacity: 0.5;
+            font-size: 14px;
+            letter-spacing: 4px;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 30px;
+            margin-top: 10px;
+            font-weight: 600;
+            letter-spacing: 5px;
+        }
+    }
+
+    div.landing_speech {
+        color: #fff;
+        position: absolute;
+        top: 45%;
+        left: 55%;
+        width: 250px;
+    }
+
+    div.landing_button {
+        position: absolute;
+        top: 65%;
+        right: 15%;
+        width: 170px;
+        height: 50px;
+        border: 2px solid transparent;
+        border-image: linear-gradient(to right, #4395C6 0%, #E8AF85 100%);
+        border-image-slice: 1;
+        padding: 14px 30px;
+        -webkit-box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
+        -moz-box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
+        box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
+        transition: background-color 0.2s ease-in-out;
+
+        a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: #E8AF85;
+            border: 2px solid #E8AF85;
+        }
+    }
+
+    div.landing_news {
+        position: absolute;
+        bottom: 8%;
+        right: 30%;
+
+        div.landing_button {
+            width: 20px;
+            height: 40px;
+            padding: 8px 28px 13px 13px;
+
+            i {
+                color: #fff;
+            }
+        }
+
+        span {
+            color: #fff;
+            position: absolute;
+            left: 20px;
+            top: 13px;
+            width: 220px;
+            font-size: 12px;
+        }
+
+        form {
+            position: absolute;
+            bottom: 8%;
+            right: 30%;
+            display: none;
+
+            input:not([type="submit"]) {
+                width: 350px;
+                height: 40px;
+                background: transparent;
+                border: 2px solid transparent;
+                border-image: linear-gradient(to right, #4395C6 0%, #E8AF85 100%);
+                border-image-slice: 1;
+                -webkit-box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
+                -moz-box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
+                box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
+            }
+
+            input:focus:-webkit-autofill {
+                background-color: #fff;
+                background-image: none;
+                color: rgb(0, 0, 0);
+            }
+
+            [type="submit"] {
+                border: none;
+                background-color: transparent;
+                color: #fff;
+            }
+        }
+    }
+}
+// HANDLE MESSAGES
+div.messages {
+    z-index: 100;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    -webkit-box-shadow: -5px 0 15px 0 rgba(0,0,0,0.1);
+    -moz-box-shadow: -5px 0 15px 0 rgba(0,0,0,0.1);
+    box-shadow: -5px 0 15px 0 rgba(0,0,0,0.1);
+    transition: ease 0.5s;
+    //animation
+    animation: ephemeral_window 1s ease-in 4s 1 forwards;
+
+    p {
+        font-family: $main-font, sans-serif;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+}
+@-webkit-keyframes ephemeral_window {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.messages.errors {
+    z-index: 5;
+}
+
+.messages.success {
+    z-index: 10;
+}
+
+.messages.errors::before {
+    content: 'X';
+    font-family: $main-font, sans-serif;
+    font-size: 25px;
+    border: 2px solid red;
+    border-radius: 50%;
+    padding: 10px 15px;
+    margin: 5% 0 5% 44%;
+    width: 100%;
+    color: red;
+    background-color: #fff;
+}
+
+.messages.success::before {
+    content: 'V';
+    font-family: $main-font, sans-serif;
+    font-size: 25px;
+    border: 2px solid green;
+    border-radius: 50%;
+    padding: 10px 15px;
+    margin: 5% 0 5% 44%;
+    width: 100%;
+    color: green;
+    background-color: #fff;
+}

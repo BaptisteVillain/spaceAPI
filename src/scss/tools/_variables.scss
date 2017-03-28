@@ -1,12 +1,23 @@
 @charset "UTF-8";
 
 // Fonts
-$main-font: 'Quicksand', sans-serif;
-$font-color: #6E5E61;
+$main-font: 'ProximaNova-Light', sans-serif;
+$font-color: #fff;
+
+$title-font: 'ProximaNova-SemiBold', sans-serif;
+@font-face {
+    font-family: $main-font;
+    src: url('../fonts/ProximaNova-Light.otf');
+    letter-spacing: 2px;
+}
+@font-face {
+    font-family: $title-font;
+    src: url('../fonts/ProximaNova-SemiBold.otf');
+    letter-spacing: 2px;
+}
 
 // Breakpoints
 $phone: 544px;
 $tablet: 768px;
 $desktop: 992px;
 $wide-desktop: 1200px;
-
