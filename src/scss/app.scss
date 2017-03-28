@@ -1,8 +1,5 @@
 @charset 'UTF-8';
 
-// Landing page
-@import 'pages/landing.scss';
-
 // Tools
 @import 'tools/variables';
 
@@ -14,3 +11,6 @@
 @import 'base/map-container';
 @import 'base/timeline-container';
 @import 'base/sidebar-container';
+
+// Landing page
+@import 'pages/landing';
