@@ -60,14 +60,17 @@ mail($mail, $subject, $message, $header);
 </head>
 
 <body>
-	<div class="messages errors">
-    <?php foreach ($error_messages as $_key => $_message) {
-    ?>
-    <p>
-      <?= $_key; ?> : <?= $_message; ?>
-    </p>
-    <?php
-} ?>
+	<!-- Messages -->
+	<div class="<?= (!empty($success_messages)) ? 'messages success' : '' ?>">
+	 <?php foreach ($success_messages as $_message): ?>
+			 <p><?= $_message ?></p>
+	 <?php endforeach ?>
+	</div>
+
+	<div class="<?= (!empty($error_messages)) ? 'messages errors' : '' ?>">
+	 <?php foreach ($error_messages as $_key => $_message): ?>
+			 <p><?= $_message ?></p>
+	 <?php endforeach ?>
 	</div>
     <nav>
         <ul class="left"><img src="assets/images/logo.png" alt="logo" /></ul>

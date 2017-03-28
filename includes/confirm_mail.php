@@ -1,39 +1,29 @@
 <?php
 
-    // Messages
-    $error_messages = array();
+// Error or success messages
+$error_messages = array();
+$success_messages = array();
 
     // Form sent
-    if(!empty($_POST))
-    {
-
-
+    if (!empty($_POST['confirm'])) {
         // Retrieve data
         $email  = $_POST['email'];
-
-
       // name errors
-        if(empty($email))
-            $error_messages['email'] = 'veuillez renseigner votre mail';
-          
+        if (empty($email)) {
+            $error_messages['email'] = 'Veuillez renseigner votre mail';
+        }
 
+        if (empty($error_messages)) {
+            $prepare = $pdo->prepare("INSERT INTO mail (email) VALUES (:email)");
+            $prepare->bindValue('email', $_POST['email']);
 
-      if(empty($error_messages))
-{
-
-$prepare = $pdo->prepare("INSERT INTO mail (email) VALUES (:email)" );
-$prepare->bindValue('email', $_POST['email']);
-
-$prepare->execute();
-
-}
-
+            $prepare->execute();
+            $success_messages['inscription'] = 'Vous avez bien été inscris à notre newsletter !';
+        }
     }
 
     // No data sent
-    else
-    {
+    else {
         // Default values
         $_POST['email'] = '';
     }
-?>

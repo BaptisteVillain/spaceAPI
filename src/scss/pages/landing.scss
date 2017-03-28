@@ -38,6 +38,7 @@ div.main_landing {
             margin-top: 10px;
             font-weight: 600;
             letter-spacing: 5px;
+            font-family: $title-font;
         }
     }
 
@@ -86,7 +87,7 @@ div.main_landing {
         div.landing_button {
             width: 20px;
             height: 40px;
-            padding: 8px 28px 13px 13px;
+            padding: 10px 28px 13px 13px;
 
             i {
                 color: #fff;
@@ -104,11 +105,13 @@ div.main_landing {
 
         form {
             position: absolute;
-            bottom: 8%;
-            right: 30%;
+            z-index: 10;
+            width: 450px;
+            left: -45px;
             display: none;
 
             input:not([type="submit"]) {
+                padding: 10px;
                 width: 350px;
                 height: 40px;
                 background: transparent;
@@ -118,12 +121,7 @@ div.main_landing {
                 -webkit-box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
                 -moz-box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
                 box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
-            }
-
-            input:focus:-webkit-autofill {
-                background-color: #fff;
-                background-image: none;
-                color: rgb(0, 0, 0);
+                color: #E1A880;
             }
 
             [type="submit"] {
@@ -135,12 +133,14 @@ div.main_landing {
     }
 }
 // HANDLE MESSAGES
+
 div.messages {
     z-index: 100;
     position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 400px;
+    top: 35%;
+    left: 25%;
+    min-height: 20%;
+    width: 50%;
     height: auto;
     padding: 20px;
     background-color: #fff;
@@ -150,15 +150,17 @@ div.messages {
     box-shadow: -5px 0 15px 0 rgba(0,0,0,0.1);
     transition: ease 0.5s;
     //animation
-    animation: ephemeral_window 1s ease-in 4s 1 forwards;
+    animation: ephemeral_window 1s ease-in-out 3s 1 forwards;
 
     p {
         font-family: $main-font, sans-serif;
-        font-size: 14px;
-        margin-top: 20px;
+        color: #000;
+        font-size: 18px;
+        margin-top: 30px;
+        background-color: transparent;
     }
 }
-@-webkit-keyframes ephemeral_window {
+@keyframes ephemeral_window {
     0% {
         opacity: 0;
     }
@@ -177,27 +179,17 @@ div.messages {
 }
 
 .messages.errors::before {
-    content: 'X';
-    font-family: $main-font, sans-serif;
-    font-size: 25px;
-    border: 2px solid red;
-    border-radius: 50%;
-    padding: 10px 15px;
-    margin: 5% 0 5% 44%;
-    width: 100%;
-    color: red;
+    content: url('../images/mars-icon.png');
+    width: 50px;
+    height: auto;
+    margin-left: 45%;
     background-color: #fff;
 }
 
 .messages.success::before {
-    content: 'V';
-    font-family: $main-font, sans-serif;
-    font-size: 25px;
-    border: 2px solid green;
-    border-radius: 50%;
-    padding: 10px 15px;
-    margin: 5% 0 5% 44%;
-    width: 100%;
-    color: green;
+    content: url('../images/earth-icon.png');
+    margin-left: 45%;
+    width: 50px;
+    height: auto;
     background-color: #fff;
 }
