@@ -4,12 +4,31 @@
   box-sizing: border-box;
 }
 
-html, body {
+html, body, p {
   font-family: $main-font;
+  color:$font-color;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  background: #EFF3F7;
+  background: #000;
   overflow: hidden;
+}
+
+// common classes
+.left{
+  float: left;
+}
+
+.right{
+  float:right;
+}
+
+.clear_both{
+  clear: both;
+}
+
+.center{
+  width:100%;
+  margin: auto;
 }

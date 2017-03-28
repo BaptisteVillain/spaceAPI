@@ -1,3 +1,15 @@
+// newsletter on landing page
+var landing = {};
+landing.button = document.querySelector('div.landing_news div.landing_button');
+landing.span = document.querySelector('div.landing_news span');
+landing.form = document.querySelector('div.landing_news form');
+
+landing.button.addEventListener('click', function() {
+    landing.span.style.display = 'none';
+    landing.button.style.display = 'none';
+    landing.form.style.display = 'block';
+});
+
 var keys = document.querySelectorAll('.key');
 
 var curiosity_path_svg = document.querySelector('.curiosity-path svg');
@@ -18,7 +30,7 @@ function curiosityPath(start, end, animate){
 		var pos = keys[i].getBoundingClientRect();
 		path += ' L' + (pos.left+6.5) + ' ' + (pos.top+6.5);
 	}
-	newpath = document.createElementNS('http://www.w3.org/2000/svg',"path"); 
+	newpath = document.createElementNS('http://www.w3.org/2000/svg',"path");
 	newpath.setAttributeNS(null, 'd', path);
 	console.log(curiosity_path_svg);
 
