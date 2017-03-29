@@ -91,24 +91,6 @@
         <?php endforeach?>
       </div>
     </div>
-    <div class="sidebar-container">
-      <div class="sidebar-day">SOL 145</div>
-      <h2 class="sidebar-title photos">Photos</h2>
-      <div class="sidebar-info">
-        <h2 class="sidebar-title">Informations</h2>
-        <div class="info-general">
-        <div>Temperature on Mars: <strong>-10</strong></div>
-        <br>
-        <div>Sol : <strong>150</strong></div>
-        </div>
-      </div>
-      <div class="sidebar-news">
-        <h2 class="sidebar-title">News of that day</h2>
-        <div>lorem</div>
-        <div>lorem</div>
-        <div>lorem</div>
-      </div>
-    </div>
     <div class="timeline-container">
       <div class="timeline-controls">
         <a href="#" class="previous">prev</a>
@@ -154,6 +136,89 @@
         </div>
       </div>
     </div>
+    
+  <div class="sidebar-container">
+    <div class="sidebar-day">SOL 145</div> 
+      <div class="sidebar-info">
+        <h2 class="sidebar-title">Informations</h2>
+        <div class="info-general">
+        <div>Temperature on Mars: <strong>-10</strong></div>
+        <br>
+        <div>Sol : <strong>150</strong></div>
+        </div>
+      </div>
+      <div class="sidebar-news">
+        <h2 class="sidebar-title">News of that day</h2>
+        <div>lorem</div>
+        <div>lorem</div>
+        <div>lorem</div>
+      </div>
+        <h2 class="sidebar-title photos">Photos</h2>
+      <div class="row">
+        <div class="column">
+          <img src="http://lorempixel.com/800/800/" onclick="openModal();currentSlide(1)" class="hover-shadow">
+        </div>
+        <div class="column">
+          <img src="http://lorempixel.com/800/800/" onclick="openModal();currentSlide(2)" class="hover-shadow">
+        </div>
+        <div class="column">
+          <img src="http://lorempixel.com/800/800/" onclick="openModal();currentSlide(3)" class="hover-shadow">
+        </div>
+        <div class="column">
+          <img src="http://lorempixel.com/200/200/" onclick="openModal();currentSlide(4)" class="hover-shadow">
+        </div>
+      </div>
+
+      <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+          <div class="mySlides">
+            <div class="numbertext">1 / 4</div>
+            <img src="http://lorempixel.com/800/800/" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">2 / 4</div>
+            <img src="http://lorempixel.com/800/800/" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">3 / 4</div>
+            <img src="http://lorempixel.com/800/800/" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">4 / 4</div>
+            <img src="http://lorempixel.com/800/800/" style="width:100%">
+          </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <div class="column">
+        <img class="demo" src="http://lorempixel.com/800/800/" onclick="currentSlide(1)">
+      </div>
+
+      <div class="column">
+        <img class="demo" src="http://lorempixel.com/800/800/" onclick="currentSlide(2)">
+      </div>
+
+      <div class="column">
+        <img class="demo" src="http://lorempixel.com/800/800/" onclick="currentSlide(3)">
+      </div>
+
+      <div class="column">
+        <img class="demo" src="http://lorempixel.com/800/800/" onclick="currentSlide(4)">
+      </div>
+      </div>
+    </div>
+  </div>
+    
     <script type="text/javascript">
       var ressources  = <?= json_encode($ressources) ?> ;
       var sol         = <?= isset($select_sol) ? $select_sol : '0' ?> ;
