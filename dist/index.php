@@ -1,6 +1,9 @@
 <?php
 include 'weather.php';
 include 'location.php';
+
+include 'config.php';
+
   // Get content
   //$locations = file_get_contents('https://mars.jpl.nasa.gov/msl-raw-images/locations.xml');
   $locations = file_get_contents('./data/location.xml');
@@ -38,6 +41,9 @@ include 'location.php';
   if(!in_array($select_sol, $sols)){
     $select_sol = 0;
   }
+
+  include 'get_img.php';
+
 
   $min_lat = min($lat);
   $min_lon = min($lon);
