@@ -165,7 +165,7 @@
           <img src="http://lorempixel.com/800/800/" onclick="openModal();currentSlide(3)" class="hover-shadow">
         </div>
         <div class="column">
-          <img src="http://lorempixel.com/200/200/" onclick="openModal();currentSlide(4)" class="hover-shadow">
+          <img src="http://lorempixel.com/800/800/" onclick="openModal();currentSlide(4)" class="hover-shadow">
         </div>
       </div>
 
