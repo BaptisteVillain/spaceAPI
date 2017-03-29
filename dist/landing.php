@@ -106,7 +106,6 @@ mail($mail, $subject, $message, $header);
         </div>
     </div>
 
-    <script src="assets/js/app.min.js"></script>
-    <script src="dist/assets/js/mail.js"></script>
+    <script src="assets/js/app-landing.js"></script>
 </body>
 </html>

@@ -1,11 +1,12 @@
 .sidebar-container {
   width: 30vw;
   height: 100vh;
-  background: #30353B;
+  background: #061F33;
   position: fixed;
   top: 0;
   right: 0;
-  text-align: center;
+  border-left: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,.4);
 }
 
 .sidebar-title {

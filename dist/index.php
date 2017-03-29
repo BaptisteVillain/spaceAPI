@@ -1,18 +1,24 @@
 <?php 
-  // Get content
-  //$result = file_get_contents('https://mars.jpl.nasa.gov/msl-raw-images/locations.xml');
-  $locations = file_get_contents('./data/location.xml');
 
-  // Json decode
+  // Get content
+  //$locations = file_get_contents('https://mars.jpl.nasa.gov/msl-raw-images/locations.xml');
+  $locations = file_get_contents('./data/location.xml');
   $locations = simplexml_load_string($locations);
 
   $ressources = [];
-
-  $coords = [];
   $lon = [];
   $lat = [];
-
   $last_sol = -10;
+  $sols = [];
+  $coords = [];
+
+  if(!empty($_GET) && isset($_GET['sol'])){
+    $select_sol = (int)$_GET['sol'];
+  }
+  else{
+    $select_sol = 0;
+  }
+
   foreach ($locations as $_index => $_result) {
     if($_result->endSol - $last_sol >= 10){
       $last_sol = $_result->endSol;
@@ -20,51 +26,63 @@
       $ressources[sizeof($ressources)-1]['sol'] = (int)$last_sol;
       $ressources[sizeof($ressources)-1]['date'] = str_replace('T', ' ', (string)$_result->arrivalTime);
       $ressources[sizeof($ressources)-1]['date'] = str_replace('Z', ' ', $ressources[sizeof($ressources)-1]['date']);
+
+      $sols[] = (int)$last_sol;
+
       $lon[] = $_result->lon;
       $lat[] = $_result->lat;
-
     }
+  }
+
+  if(!in_array($select_sol, $sols)){
+    $select_sol = 0;
   }
 
   $min_lat = min($lat);
   $min_lon = min($lon);
-
   $lon = [];
   $lat = [];
-
   foreach ($ressources as $_ressource) {
     $lon[] = ($_ressource['coords'][0]-$min_lon)*10000;
     $lat[] = ($_ressource['coords'][1]-$min_lat)*-10000;
   }
-
   $new_min_lat = min($lat);
   $new_min_lon = min($lon);
 
+  $index = array_search($select_sol, $sols);
 
+  $round_index =  (int)($index*0.1)*10;
+
+  for ($i= 0; $i <= 9; $i++) {
+    if($ressources[($round_index + $i)]['sol'] == $select_sol){
+      $selected_in = $i;
+    }
+  }
  ?>
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title</title>
+    <!-- Links -->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Title</title>
-  <!-- Links -->
-  <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-
-  <div class="map-container">
-    <div class="curiosity-path">
-      <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1440" viewBox="0 0 1440 1440">
+    <div class="map-container">
+      <div class="background">
+        <img src="assets/img/background.svg" alt="mars topographic background">
+      </div>
+      <div class="curiosity-path">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1440" viewBox="0 0 1440 1440">
       </div>
       <div class="content">
         <?php
           foreach ($ressources as $_index => $_ressource):?>
-            <a href="#" class="key" style="transform: translate(<?=  (($_ressource['coords'][0]-$min_lon)*8000) - ($new_min_lon * 0.76)?>px, <?= (($_ressource['coords'][1]-$min_lat)*-8000) - ($new_min_lat*0.793) ?>px)" data-index="<?= $_index ?>">
+            <a href="?sol=<?= $_ressource['sol'] ?>" class="key" style="transform: translate(<?=  (($_ressource['coords'][0]-$min_lon)*8000) - ($new_min_lon * 0.76)?>px, <?= (($_ressource['coords'][1]-$min_lat)*-8000) - ($new_min_lat*0.793) ?>px)" data-index="<?= $_index ?>">
               <p>
                 <span>sol<?= $_ressource['sol'] ?></span>
                 <span><?= $_ressource['date'] ?></span>
@@ -75,57 +93,7 @@
     </div>
     <div class="sidebar-container">
       <div class="sidebar-day">SOL 145</div>
-<!--      <div class="sidebar-slider">-->
-        <h2 class="sidebar-title photos">Photos</h2>
-<!--        <div class="slide">-->
-<!--        <div class="image index-1"><img src="https://unsplash.it/200/200/?random=1" alt=""></div>-->
-<!--        <div class="image index-2"><img src="https://unsplash.it/200/200/?random=1" alt=""></div>-->
-<!--        <div class="image index-3"><img src="https://unsplash.it/200/200/?random=1" alt=""></div>-->
-<!--      </div>-->
-<!--      </div>-->
-     
-      <div class="carousel">
-  
-  <div class="slides-container">
-    <div class="slides-mover">
-      <div class="slide">
-        <img src="http://lorempixel.com/200/200/" alt="img">
-      </div>
-      <div class="slide">
-        <img src="http://lorempixel.com/200/200/" alt="img">
-      </div>
-      <div class="slide">
-        <img src="http://lorempixel.com/200/200/" alt="img">
-      </div>
-      <div class="slide">
-        <img src="http://lorempixel.com/200/200/" alt="img">
-      </div>
-            <div class="slide">
-        <img src="http://lorempixel.com/200/200/" alt="img">
-      </div>
-      <div class="slide">
-        <img src="http://lorempixel.com/200/200/" alt="img">
-      </div>
-      <div class="slide">
-        <img src="http://lorempixel.com/200/200/" alt="img">
-      </div>
-      <div class="slide">
-        <img src="http://lorempixel.com/200/200/" alt="img">
-      </div>
-      <div class="clear_both"></div>
-  </div>
-  <div class="siblings">
-    <a href="#" class="prev">&lt;</a>
-    <a href="#" class="next">&gt;</a>
-  </div>
-  
-  
-</div>
-     
-     
-
-     
-     
+      <h2 class="sidebar-title photos">Photos</h2>
       <div class="sidebar-info">
         <h2 class="sidebar-title">Informations</h2>
         <div class="info-general">
@@ -142,10 +110,57 @@
       </div>
     </div>
     <div class="timeline-container">
-      
+      <div class="timeline-controls">
+        <a href="#" class="previous">prev</a>
+        <a href="#" class="next">next</a>
+      </div>
+      <div class="timeline">
+        <div class="line-container">
+          <div class="date-display">sol xxx</div>
+          <div class="line"></div>
+        </div>
+        <div class="item-container">
+          <a href="#" class="item"></a>
+          <div class="item-line"></div>
+          <a href="#" class="item"></a>
+          <div class="item-line"></div>
+          <a href="#" class="item"></a>
+          <div class="item-line"></div>
+          <a href="#" class="item"></a>
+          <div class="item-line"></div>
+          <a href="#" class="item"></a>
+          <div class="item-line"></div>
+          <a href="#" class="item"></a>
+          <div class="item-line"></div>
+          <a href="#" class="item"></a>
+          <div class="item-line"></div>
+          <a href="#" class="item"></a>
+          <div class="item-line"></div>
+          <a href="#" class="item"></a>
+          <div class="item-line"></div>
+          <a href="#" class="item"></a>
+        </div>
+        <div class="info-container">
+          <div class="info-item"></div>
+          <div class="info-item"></div>
+          <div class="info-item"></div>
+          <div class="info-item"></div>
+          <div class="info-item"></div>
+          <div class="info-item"></div>
+          <div class="info-item"></div>
+          <div class="info-item"></div>
+          <div class="info-item"></div>
+          <div class="info-item"></div>
+        </div>
+      </div>
     </div>
-
+    <script type="text/javascript">
+      var ressources  = <?= json_encode($ressources) ?> ;
+      var sol         = <?= isset($select_sol) ? $select_sol : '0' ?> ;
+      var sol_index       = <?= isset($select_sol) ? array_search($select_sol, $sols) : '0' ?> ;
+      var selected    = <?= isset($select_sol) ? (int)($index*0.1)*10 : '0' ?> ;
+      var selected_in = <?= isset($select_sol) ? $selected_in : '0' ?> ;
+    </script>
     <script src="assets/js/app.min.js"></script>
-    <script src="../dist/assets/js/slider.js"></script>
   </body>
 </html>
