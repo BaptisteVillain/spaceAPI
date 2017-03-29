@@ -74,7 +74,7 @@ SLIDER
   display: none;
   position: fixed;
   z-index: 99;
-  padding-top: 100px;
+  padding-top: 30px; 
   left: 0;
   top: 0;
   width: 100%;
@@ -86,11 +86,11 @@ SLIDER
 /* Modal Content */
 .modal-content {
   position: relative;
-  background-color: #fefefe;
   margin: auto;
   padding: 0;
   width: 50%;
   max-width: 1200px;
+  height: 700px; //
 }
 
 /* The Close Button */
@@ -112,7 +112,7 @@ SLIDER
 
 .mySlides {
   display: none;
-  height: auto;
+  height: 85%;
     img {
     height: 100%;
   }
