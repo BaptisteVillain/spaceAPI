@@ -74,7 +74,7 @@
       </div>
     </div>
     <div class="sidebar-container">
-      <div class="sidebar-day">DAY 145</div>
+      <div class="sidebar-day">SOL 145</div>
 <!--      <div class="sidebar-slider">-->
         <h2 class="sidebar-title photos">Photos</h2>
 <!--        <div class="slide">-->
@@ -97,7 +97,22 @@
       <div class="slide">
         <img src="http://lorempixel.com/200/200/" alt="img">
       </div>
-
+      <div class="slide">
+        <img src="http://lorempixel.com/200/200/" alt="img">
+      </div>
+            <div class="slide">
+        <img src="http://lorempixel.com/200/200/" alt="img">
+      </div>
+      <div class="slide">
+        <img src="http://lorempixel.com/200/200/" alt="img">
+      </div>
+      <div class="slide">
+        <img src="http://lorempixel.com/200/200/" alt="img">
+      </div>
+      <div class="slide">
+        <img src="http://lorempixel.com/200/200/" alt="img">
+      </div>
+      <div class="clear_both"></div>
   </div>
   <div class="siblings">
     <a href="#" class="prev">&lt;</a>

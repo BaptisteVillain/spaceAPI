@@ -17,7 +17,7 @@ carousel.elements.next.addEventListener( 'click', function( event )
     if( carousel.index >= carousel.length )
         carousel.index = 0;
 
-    var x = - carousel.index * 400;
+    var x = - carousel.index * 260;
 
     carousel.elements.slides_mover.style.transform = 'translateX(' + x + 'px)';
 
@@ -30,7 +30,7 @@ carousel.elements.prev.addEventListener( 'click', function (event) {
   if( carousel.index < 0)
     carousel.index = carousel.length-1;
   
-  var y = carousel.index * -400;
+  var y = carousel.index * -260;
   carousel.elements.slides_mover.style.transform = 'translateX(' + y + 'px)';
   
   event.preventDefault();
