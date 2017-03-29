@@ -1,0 +1,19 @@
+// Earth and Mars weather
+div.earth_mars_weather {
+	position: absolute;
+	width: 23%;
+
+	p.weather_day {
+		text-transform: uppercase;
+		font-size: 20px;
+	}
+
+	div.weather_earth, div.weather_mars {
+		width:48%;
+		display:inline-block;
+		padding:10px;
+		img{
+			width:50px;
+		}
+	}
+}

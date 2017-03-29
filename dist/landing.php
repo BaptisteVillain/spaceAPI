@@ -1,5 +1,5 @@
 <?php
-require '../includes/confirm_mail.php';
+require 'includes/confirm_mail.php';
 
 $mail = $email; // Déclaration de l'adresse de destination.
 

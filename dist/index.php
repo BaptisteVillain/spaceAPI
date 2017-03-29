@@ -1,5 +1,6 @@
-<?php 
-
+<?php
+include 'weather.php';
+include 'location.php';
   // Get content
   //$locations = file_get_contents('https://mars.jpl.nasa.gov/msl-raw-images/locations.xml');
   $locations = file_get_contents('./data/location.xml');
@@ -73,6 +74,23 @@
   <body>
 
     <div class="map-container">
+      <div class="earth_mars_weather">
+        <p class="weather_day">day <?= $_ressource['sol'] ?></p>
+        <div class="weather_earth">
+          <p class="planet_name">earth</p>
+          <img src="assets/img/earth-weather.png" alt="earth"/>
+          <p><?= $_ressource['sol'] ?>°C</p>
+          <p><?= $_ressource['sol'] ?>°C</p>
+          <p><?= $_ressource['sol'] ?>°C</p>
+        </div>
+        <div class="weather_mars">
+          <p class="planet_name">mars</p>
+          <img src="assets/img/mars-weather.png" alt="mars"/>
+          <p><?= $_weather->min_temp ?> °C</p>
+          <p><?= $_weather->season ?></p>
+          <p><?= $_weather->pressure ?> Pa</p>
+        </div>
+      </div>
       <div class="background">
         <img src="assets/img/background.svg" alt="mars topographic background">
       </div>
@@ -136,9 +154,9 @@
         </div>
       </div>
     </div>
-    
+
   <div class="sidebar-container">
-    <div class="sidebar-day">SOL 145</div> 
+    <div class="sidebar-day">SOL 145</div>
       <div class="sidebar-info">
         <h2 class="sidebar-title">Informations</h2>
         <div class="info-general">
@@ -218,7 +236,7 @@
       </div>
     </div>
   </div>
-    
+
     <script type="text/javascript">
       var ressources  = <?= json_encode($ressources) ?> ;
       var sol         = <?= isset($select_sol) ? $select_sol : '0' ?> ;
