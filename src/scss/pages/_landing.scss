@@ -42,7 +42,7 @@ div.main_landing {
             position: absolute;
 
             &:nth-child(1) {
-                left:0%;
+                left: 0;
             }
 
             &:nth-child(2) {
@@ -65,17 +65,19 @@ div.main_landing {
                 border: 4px solid #fff;
                 border-radius: 50%;
                 background-color: #000;
+                position: absolute;
 
                 &:first-child {
                     width: 23px;
                     height: 23px;
-                    margin: 70% 0%;
+                    left: 23px;
                 }
 
                 &:last-child {
                     width: 18px;
                     height: 18px;
-                    margin: -250% 40%;
+                    left: -12px;
+                    top: 13px;
                 }
             }
         }
@@ -113,19 +115,19 @@ div.main_landing {
         -moz-box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
         box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
         transition: background-color 0.2s ease-in-out;
-      
+
         .landing_a {
-          padding-top: 14px;
+            padding-top: 14px;
         }
-      
+
         a {
             text-transform: uppercase;
             text-decoration: none;
             color: #fff;
             letter-spacing: 2px;
-          display: block;
-          width: 100%;
-          height: 100%;
+            display: block;
+            width: 100%;
+            height: 100%;
         }
 
         &:hover {
@@ -216,7 +218,6 @@ div.messages {
         background-color: transparent;
     }
 }
-
 @keyframes ephemeral_window {
     0% {
         opacity: 0;
