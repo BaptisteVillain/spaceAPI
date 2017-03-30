@@ -1,5 +1,52 @@
 // ipad portrait
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    // landing page
+    nav ul.left img {
+        width: 8%;
+    }
+
+    div.main_landing {
+        img {
+            width: 70%;
+            margin-bottom: -215px;
+        }
+
+        div.landing_title {
+            left: 20%;
+            top: 30%;
+
+            & span {
+                padding-left: 32%;
+            }
+
+            & h2:nth-child(2) {
+                left: 50%;
+            }
+
+            div.css_logo {
+                left: 297px;
+            }
+        }
+
+        div.landing_speech {
+            left: 35%;
+            text-align: center;
+            top: 50%;
+        }
+
+        div.landing_button {
+            right: 25%;
+        }
+
+        div.landing_news {
+            bottom: -15%;
+            right: 10%;
+
+            form {
+                margin-left: -115px;
+            }
+        }
+    }
     // 404
     div.lost {
         div.main_landing {
@@ -39,6 +86,49 @@
 }
 // ipad landscape
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    // landing page{
+    nav ul.left img {
+        width: 5%;
+    }
+
+    div.main_landing {
+        img {
+            width: 80%;
+            bottom: -270px;
+        }
+
+        div.landing_title {
+            left: 35%;
+            top: 30%;
+
+            span {
+                padding-left: 25%;
+            }
+
+            & h2:nth-child(2) {
+                left: 37%;
+            }
+
+            div.css_logo {
+                left: 296px;
+            }
+        }
+
+        div.landing_speech {
+            top: 60%;
+            left: 67%;
+        }
+
+        div.landing_button {
+            top: 90%;
+            right: -8%;
+        }
+
+        div.landing_news {
+            bottom: -25%;
+            right: 9%;
+        }
+    }
     // 404
     div.lost {
         div.main_landing {
@@ -77,6 +167,65 @@
 }
 // iphone
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    // landing page
+    nav ul.left img {
+        width: 15%;
+    }
+
+    div.main_landing {
+        img {
+            width: 120%;
+            margin-bottom: -240px;
+        }
+
+        div.landing_title {
+            left: 12%;
+            top: 45%;
+
+            & span {
+                padding-left: 40%;
+            }
+
+            & h2 {
+                font-size: 50px;
+                letter-spacing: 20px;
+
+                &:nth-child(2) {
+                    left: 70%;
+                }
+            }
+
+            div.css_logo {
+                left: 196px;
+                top: 42px;
+            }
+        }
+
+        div.landing_speech {
+            left: 13%;
+            top: 65%;
+            text-align: center;
+        }
+
+        div.landing_button {
+            right: 7%;
+            top: 85%;
+        }
+
+        div.landing_news {
+            top: 6%;
+            right: 20%;
+
+            div.landing_button {
+                top: 0;
+            }
+
+            form {
+                margin-left: -140px;
+            }
+        }
+    }
+    // 404
     div.lost {
         div.main_landing {
             div.landing_title {
@@ -118,6 +267,44 @@
 }
 // small screen
 @media only screen and (min-width : 1050px) and (max-width : 1280px) {
+    // landing page
+    // landing page
+    div.main_landing {
+        img {
+            width: 60%;
+        }
+
+        div.landing_title {
+            left: 24%;
+            top: 15%;
+
+            & span {
+                padding-left: 20%;
+            }
+
+            & h2:nth-child(2) {
+                left: 30%;
+            }
+
+            div.css_logo {
+                left: 297px;
+            }
+        }
+
+        div.landing_speech {
+            left: 55%;
+        }
+
+        div.landing_button {
+            right: 16%;
+        }
+
+        div.landing_news {
+            bottom: 8%;
+            right: 35%;
+        }
+    }
+    // 404
     div.lost {
         div.main_landing {
             div.landing_title {
