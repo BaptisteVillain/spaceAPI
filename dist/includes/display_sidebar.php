@@ -1,17 +1,14 @@
 <div class="sidebar-day">SOL 145</div>
-      <div class="sidebar-info">
-        <h2 class="sidebar-title">Informations</h2>
-        <div class="info-general">
-        <div>Temperature on Mars: <strong>-10</strong></div>
-        <br>
-        <div>Sol : <strong>150</strong></div>
-        </div>
-      </div>
       <div class="sidebar-news">
-        <h2 class="sidebar-title">News of that day</h2>
-        <div>lorem</div>
-        <div>lorem</div>
-        <div>lorem</div>
+        <h2 class="sidebar-title">Tweets of the day</h2>
+        <?php for ($i=0; $i < $max_size; $i++) {?>
+          <div class="tweet">
+            <?= $tweets[$i]->tweetText ?>
+            <a href="https://twitter.com/MarsCuriosity/status/<?= $tweets[$i]->tweetID ?>" target="_blank">
+              <img src="assets/img/logo-twitter.svg" alt="link to tweet">
+            </a>
+          </div>
+        <?php } ?>
       </div>
       <h2 class="sidebar-title photos">Photos - <?= sizeof($images)?> </h2>
       <?php if(!empty($images)){?>
@@ -48,7 +45,10 @@
         </div>
       </div>
       <?php } else{ ?>
-        <p>Oops, Curiosity was sleeping this day</p>
+        <p>
+          Oops, Curiosity was sleeping this day... <br/>
+          <img src="./assets/img/rover-full.svg" alt="curiosity rover">
+        </p>
       <?php } ?>
 
 

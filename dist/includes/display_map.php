@@ -1,15 +1,15 @@
-  <p class="weather_day"><strong>DAY <?= substr($positions[$index]->date, 0, 10) ?></strong></p>
- <div class="earth_mars_weather">
+<p class="weather_day"><strong>DAY <?= substr($positions[$index]->date, 0, 10) ?></strong></p>
+<div class="earth_mars_weather">
   <div class="weather_earth">
     <p class="planet_name">Earth</p>
-    <img src="assets/img/planet-earth.png" alt="earth"/>
+    <img src="assets/img/weather-earth.png" alt="earth"/>
     <p><?= $earth_temp ?>°C</p>
     <p><?= $earth_season ?></p>
     <p><?= $earth_pressure ?> hPa</p>
   </div>
   <div class="weather_mars">
     <p class="planet_name">Mars</p>
-    <img src="assets/img/mars.png" alt="mars"/>
+    <img src="assets/img/weather-mars.png" alt="mars"/>
     <?php if(!isset($curiosity_sleeping)){?>
       <p><?= $mars_weather[0]->temp ?> °C</p>
       <p><?= $mars_weather[0]->season ?></p>
@@ -37,3 +37,4 @@
       </a>
   <?php endforeach?>
 </div>
+

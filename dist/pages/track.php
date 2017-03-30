@@ -16,6 +16,9 @@ include './includes/get_mars_weather.php';
 
 include './includes/get_earth_weather.php';
 
+include './includes/get_tweet.php';
+
+
  ?>
 
 <!DOCTYPE html>
