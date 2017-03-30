@@ -29,7 +29,7 @@ else if($q==='change' || $q==='modification'){
   $title = 'Change';
 }
 else if($q==='505'){
-  $page = '505';
+  $page = 'maintenance';
   $title = 'Delete';
 }
 else

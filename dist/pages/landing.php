@@ -98,7 +98,7 @@ mail($mail, $subject, $message, $header);
             <p>Voyagez sur Mars en découvrant l'histoire du rover Curiosity. Déployé depuis 2012, il parcours des kilomètres afin de collecter et analyser des échantillons de sol martien.</p>
         </div>
         <div class="landing_button">
-            <a href="track">découvrir</a>
+            <a class="landing_a" href="track">découvrir</a>
         </div>
         <div class="landing_news">
           <div class="landing_button">

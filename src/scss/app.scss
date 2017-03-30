@@ -14,3 +14,8 @@
 @import 'base/weather';
 // Landing page
 @import 'pages/landing';
+// 404 and 505
+@import 'pages/404';
+@import 'pages/maintenance';
+// Queries
+@import 'tools/mediaqueries';
