@@ -1,4 +1,4 @@
-<div class="sidebar-day">SOL 145</div>
+<div class="sidebar-day">day <?= isset($select_sol) ? $select_sol : '0' ?></div>
       <div class="sidebar-news">
         <h2 class="sidebar-title">Tweets of the day</h2>
         <?php for ($i=0; $i < $max_size; $i++) {?>
@@ -17,7 +17,7 @@
             <div class="column hover-shadow">
               <img src="<?= $_images ?>" onclick="openModal();currentSlide(<?= ($_index+1) ?>)">
             </div>
-          <?php endforeach; ?> 
+          <?php endforeach; ?>
       </div>
 
       <div id="myModal" class="modal">
@@ -30,7 +30,7 @@
               <img src="<?= $_images ?>" onclick="openModal();currentSlide(<?= ($_index+1) ?>)">
             </div>
           <?php endforeach; ?>
-          
+
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
           <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
@@ -50,6 +50,3 @@
           <img src="./assets/img/rover-full.svg" alt="curiosity rover">
         </p>
       <?php } ?>
-
-
-
