@@ -1,56 +1,47 @@
-<?php
+<?php 
+
+
+/****
+
+Redirect and includes
+
+****/
+
+// Config
 include 'config.php';
 
-if(!empty($_GET) && isset($_GET['sol'])){
-    $select_sol = (int)$_GET['sol'];
+// Routing
+
+
+$q = isset($_GET['q']) ? $_GET['q'] : '';
+
+if($q ==='home' || $q=== 'start' || $q==='')
+{
+  $page = 'landing';
+  $title = 'Home';
 }
-else{
-  $select_sol = 0;
+else if($q==='map' || $q==='track' || $q==='curiosity' || $q==='map' || $q==='mars'){
+  $page = 'track';
+  $title = 'Track';
+}
+else if($q==='change' || $q==='modification'){
+  $page = 'change';
+  $title = 'Change';
+}
+else if($q==='505'){
+  $page = '505';
+  $title = 'Delete';
+}
+else
+{
+  $page = '404';
+  $title = '404';
 }
 
-include 'get_position.php';
 
-include 'get_img.php';
 
-include 'get_location.php';
+// Includes
+include 'pages/'.$page.'.php';
 
-include 'get_mars_weather.php';
 
-include 'get_earth_weather.php';
 
- ?>
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Title</title>
-    <!-- Links -->
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-
-    <div class="map-container">
-      <?php include 'display_map.php'; ?>
-    </div>
-    <div class="timeline-container">
-      <?php include 'display_timeline.php';?>
-    </div>
-
-    <div class="sidebar-container">
-      <?php include 'display_sidebar.php';?>
-    </div>
-
-    <script type="text/javascript">
-      var ressources  = <?= json_encode($positions) ?> ;
-      var sol         = <?= isset($select_sol) ? $select_sol : '0' ?> ;
-      var sol_index   = <?= isset($select_sol) ? $index : '0' ?> ;
-      var selected    = <?= isset($round_index) ? $round_index : '0' ?> ;
-      var selected_in = <?= isset($selected_in) ? $selected_in : '0' ?> ;
-      var photos      = <?= !empty($images) ? 'true' : 'false' ?> ;
-    </script>
-    <script src="assets/js/app.min.js"></script>
-  </body>
-</html>
