@@ -191,3 +191,52 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 }
+
+/**************
+			ZOOM
+**************/
+
+var zoom = {};
+zoom.map = document.querySelector('.zoom');
+zoom.scale = 200;
+zoom.scale_max = 200;
+
+
+zoom.map.style.transform = 'scale(1)';
+
+zoom.map.addEventListener('wheel', function(e){
+
+	var x = e.pageX;
+	var y = e.pageY;
+
+	zoom.scale += e.deltaY;
+	if(zoom.scale < zoom.scale_max){
+		zoom.scale = zoom.scale_max;
+	}
+	var ratio = zoom.scale/zoom.scale_max;
+	zoom.map.style.transformOrigin = x + 'px ' + y + 'px';
+	zoom.map.style.transform = 'scale('+ ratio +')';
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
