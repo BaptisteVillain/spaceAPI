@@ -14,7 +14,7 @@ $success_messages = array();
         }
 
         if (empty($error_messages)) {
-            $prepare = $pdo->prepare("INSERT INTO mail (email) VALUES (:email)");
+            $prepare = $pdo->prepare("INSERT INTO newsletter_users (mail) VALUES (:email)");
             $prepare->bindValue('email', $_POST['email']);
 
             $prepare->execute();
