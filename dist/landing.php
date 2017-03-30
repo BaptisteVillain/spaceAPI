@@ -1,4 +1,5 @@
 <?php
+
 require 'includes/confirm_mail.php';
 
 $mail = $email; // Déclaration de l'adresse de destination.
@@ -86,10 +87,15 @@ mail($mail, $subject, $message, $header);
         <img src="assets/img/mars.png" alt='mars' />
         <div class="center landing_title">
             <span>welcome on</span>
-            <h2>curiosity</h2>
+            <h2>sity</h2>
+            <h2>curi</h2>
+            <div class="css_logo">
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
         </div>
         <div class="landing_speech">
-            <p>Voyagez sur Mars en découvrant l'histoire du rover déployé depuis août 2012.</p>
+            <p>Voyagez sur Mars en découvrant l'histoire du rover Curiosity. Déployé depuis 2012, il parcours des kilomètres afin de collecter et analyser des échantillons de sol martien.</p>
         </div>
         <div class="landing_button">
             <a href="#">découvrir</a>
