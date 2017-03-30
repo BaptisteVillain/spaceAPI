@@ -9,6 +9,12 @@
             </a>
           </div>
         <?php } ?>
+        <?php if($max_size == 0){?>
+          <p>
+            Oops, Curiosity was sleeping this day... <br/>
+            <img src="./assets/img/rover-full.svg" alt="curiosity rover">
+          </p>
+        <?php }?>
       </div>
       <h2 class="sidebar-title photos">Photos - <?= sizeof($images)?> </h2>
       <?php if(!empty($images)){?>

@@ -206,18 +206,20 @@ zoom.map.style.transform = 'scale(1)';
 
 zoom.map.addEventListener('wheel', function(e){
 
-	var x = e.pageX;
-	var y = e.pageY;
-
 	zoom.scale += e.deltaY;
 	if(zoom.scale < zoom.scale_max){
 		zoom.scale = zoom.scale_max;
 	}
+
+	if(zoom.scale == zoom.scale_max){
+		var x = e.pageX;
+		var y = e.pageY;
+		zoom.map.style.transformOrigin = x + 'px ' + y + 'px';
+	}
+
 	var ratio = zoom.scale/zoom.scale_max;
-	zoom.map.style.transformOrigin = x + 'px ' + y + 'px';
 	zoom.map.style.transform = 'scale('+ ratio +')';
 });
-
 
 
 
