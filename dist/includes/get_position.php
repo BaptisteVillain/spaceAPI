@@ -38,7 +38,7 @@
 	$round_index =  (int)($index*0.1)*10;
 	
 	for ($i= 0; $i <= 9; $i++) {
-	  if($positions[($round_index + $i)]->sol == $select_sol){
+	  if(isset($positions[($round_index + $i)]) && $positions[($round_index + $i)]->sol == $select_sol){
 	    $selected_in = $i;
 	  }
 	}

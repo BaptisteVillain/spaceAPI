@@ -112,11 +112,23 @@ function init(){
 	selectTimeline(selected_in);
 	svgInit();
 	curiosityPath(0, sol_index, false);
-	curiosityPath(sol_index,(sol_index+1), true);
+	if(keys[sol_index+1] != undefined){
+		curiosityPath(sol_index,(sol_index+1), true);
+	}
 	keys[sol_index].classList.add('active');
 }
 
 init();
+
+document.addEventListener('keydown', function(e) {
+	if(e.keyCode == 37 && sol_index != 0){
+		keys[sol_index-1].click();
+	}
+	if(e.keyCode == 39 && sol_index != ressources.length-1){
+		keys[sol_index+1].click();
+	}
+});
+
 
 /******
 
@@ -132,7 +144,7 @@ function closeModal() {
   document.getElementById('myModal').style.display = "none";
 }
 
-document.addEventListener('keyup', function(e) {
+document.addEventListener('keydown', function(e) {
    if (e.keyCode == 27 || e.keyCode == 32) {
    	e.preventDefault();
     closeModal();
@@ -143,7 +155,7 @@ if(photos){
 	var slideIndex = 1;
 	showSlides(slideIndex);
 
-	document.addEventListener('keyup', function(e) {
+	document.addEventListener('keydown', function(e) {
 	  	if (e.keyCode == 27 || e.keyCode == 32) {
 	   		e.preventDefault();
 	    	closeModal();
