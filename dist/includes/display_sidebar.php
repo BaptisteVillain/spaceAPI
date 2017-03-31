@@ -45,7 +45,7 @@
               <div class="column">
                 <img class="demo" src="<?= $_images ?>" onclick="currentSlide(<?= ($_index+1)?>)">
               </div>
-            <? endforeach?>
+            <?php endforeach?>
           </div>
 
         </div>

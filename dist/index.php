@@ -1,6 +1,5 @@
 <?php 
 
-
 /****
 
 Redirect and includes
@@ -15,7 +14,7 @@ include 'config.php';
 
 $q = isset($_GET['q']) ? $_GET['q'] : '';
 
-if($q ==='home' || $q=== 'start' || $q==='')
+if($q ==='home' || $q=== 'start' || $q=== '')
 {
   $page = 'landing';
   $title = 'Home';
@@ -23,10 +22,6 @@ if($q ==='home' || $q=== 'start' || $q==='')
 else if($q==='map' || $q==='track' || $q==='curiosity' || $q==='map' || $q==='mars'){
   $page = 'track';
   $title = 'Track';
-}
-else if($q==='change' || $q==='modification'){
-  $page = 'change';
-  $title = 'Change';
 }
 else if($q==='505'){
   $page = 'maintenance';

@@ -1,5 +1,5 @@
 <?php
-  define('DB_HOST','baptistevillain.fr:3306');
+  define('DB_HOST','localhost');
   define('DB_NAME','curiosity');
   define('DB_USER','curiosity');
   define('DB_PASS','curiosity123');
