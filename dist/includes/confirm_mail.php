@@ -10,7 +10,7 @@ $success_messages = array();
         $email  = $_POST['email'];
       // name errors
         if (empty($email)) {
-            $error_messages['email'] = 'Veuillez renseigner votre mail';
+            $error_messages['email'] = 'Please enter your mail';
         }
 
         if (empty($error_messages)) {
@@ -18,7 +18,7 @@ $success_messages = array();
             $prepare->bindValue('email', $_POST['email']);
 
             $prepare->execute();
-            $success_messages['inscription'] = 'Vous avez bien été inscris à notre newsletter !';
+            $success_messages['inscription'] = 'subscription has been registered !';
         }
     }
 

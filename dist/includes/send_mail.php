@@ -1,4 +1,5 @@
 <?php
+
 	$mail = $email; // Déclaration de l'adresse de destination.
 
 	if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) { // On filtre les serveurs qui rencontrent des bogues.
@@ -18,7 +19,7 @@
 	$content    = 'Merci pour votre inscription ! Vous receverez des informations sur Curiosity dès qu\'elles sont disponibles !';
 
 	//=====Création du header de l'e-mail.
-	$header = "From: \"CuriosityROVER\"<curiositylifeonmars@gmail.com>".$passage_ligne;
+	$header = "From: \"baptistevillain.fr/hetic/curiosity\"<curiositylifeonmars@gmail.com>".$passage_ligne;
 	$header.= "Reply-to: \"".$name."\" <".$from.">".$passage_ligne;
 	$header.= "MIME-Version: 1.0".$passage_ligne;
 	$header.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;

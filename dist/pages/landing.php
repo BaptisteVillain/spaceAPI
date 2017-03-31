@@ -1,9 +1,9 @@
 <?php
 
-require 'includes/confirm_mail.php';
+require './includes/confirm_mail.php';
 
 if(!empty($_POST) && isset($_POST['mail'])){
-  include 'includes/send_mail.php';
+  include './includes/send_mail.php';
 }
 
 ?>
@@ -55,16 +55,18 @@ if(!empty($_POST) && isset($_POST['mail'])){
             </div>
         </div>
         <div class="landing_speech">
-            <p>Voyagez sur Mars en découvrant l'histoire du rover Curiosity. Déployé depuis 2012, il parcours des kilomètres afin de collecter et analyser des échantillons de sol martien.</p>
+            <p>
+              Discover Mars with the story of the rover Curiosity.<br/>Since 2012, he travel kilometers in order to gather and analyze martian's samples.
+            </p>
         </div>
         <div class="landing_button">
-            <a class="landing_a" href="track">découvrir</a>
+            <a class="landing_a" href="track">Discover</a>
         </div>
         <div class="landing_news">
           <div class="landing_button">
             <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
           </div>
-          <span>s'inscrire à la newsletter</span>
+          <span>subscribe to newsletter</span>
           <form method="post" action="#">
             <input type="email" id="mail" name="email" placeholder="Votre mail"/>
             <input type="submit" name="confirm" value="go"/>

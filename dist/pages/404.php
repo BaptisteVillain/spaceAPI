@@ -29,10 +29,10 @@
             </div>
 
             <div class="landing_speech">
-                <p>Oops...! Contrairement à Curiosity, vous êtes perdu !</p>
+                <p>Oops...! Unlike Curiosity, you are lost !</p>
             </div>
             <div class="landing_button">
-                <a href="home">accueil</a>
+                <a href="home">home</a>
             </div>
         </div>
     </div>

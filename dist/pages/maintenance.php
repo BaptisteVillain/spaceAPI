@@ -27,7 +27,7 @@
         </div>
         <div class="landing_speech">
           <p>
-            Contrairement à Curiosity, vous n'êtes pas connecté avec nous ! Veuillez réessayer dans quelques minutes.
+            Unlike Curiosity, you are not connected with us !</br>Try again in few minutes.
           </p>
         </div>
       </div>
